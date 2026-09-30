@@ -4,7 +4,7 @@
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://cpan.metacpan.org/authors/id/A/AR/ARISTOTLE/Proc-Fork-{{ version }}.tar.gz
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: generic
-  number: 0
+  number: 1
   script:
     - perl Makefile.PL INSTALLDIRS=vendor NO_PERLLOCAL=1 NO_PACKLIST=1
     - make
@@ -38,9 +38,7 @@ about:
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
   license_family: OTHER
   summary: simple, intuitive interface to the fork() system call
-  license_file:
-    - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
-    - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
